@@ -1,9 +1,10 @@
 const Router = require('./router');
 const Inbox = require('./inbox');
 const Sent = require('./sent');
+const Compose = require('./compose');
 
 const routes = {
-  compose: null,
+  compose: Compose,
   inbox: Inbox,
   sent: Sent
 }

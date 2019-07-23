@@ -24,7 +24,7 @@ const MessageStore = {
   },
   sendDraft: function() {
     messages.sent.push(messageDraft);
-    messageDraft = new Message({from: '', to: '', subject: '', body: ''});
+    messageDraft = new Message();
   },
   getMessageDraft: function() {
     return messageDraft;
@@ -38,6 +38,6 @@ function Message(from = "", to = "", subject = "", body = "") {
   this.body = body;
 }
 
-const messageDraft = new Message();
+var messageDraft = new Message();
 
 module.exports = MessageStore;

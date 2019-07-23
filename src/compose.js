@@ -5,6 +5,21 @@ const Compose = {
     let div = document.createElement('div');
     div.className = 'new-message';
     div.innerHTML = this.renderForm();
+
+    div.addEventListener('change', (e) => {
+      let {target} = e;
+      let field = target.name;
+      let {value} = target;
+
+      MessageStore.updateDraftField(field, value);
+    });
+
+    div.addEventListener('submit', (e) => {
+      e.preventDefault();
+      MessageStore.sendDraft();
+      window.location.hash = "inbox";
+    });
+
     return div;
   },
   renderForm: function() {

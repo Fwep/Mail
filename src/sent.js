@@ -6,7 +6,6 @@ const Sent = {
     containerUl.className = 'messages';
     let inboxMsgs = MessageStore.getSentMessages();
     inboxMsgs.forEach(msg => {
-      console.log(this);
       let messageNode = this.renderMessage(msg);
       containerUl.appendChild(messageNode);
     });
